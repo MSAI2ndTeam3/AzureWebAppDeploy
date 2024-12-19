@@ -2,3 +2,5 @@ Flask
 openai
 azure-cognitiveservices-speech
 python-dotenv
+soundfile
+sounddevice
