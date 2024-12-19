@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LLM Conversation Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .chat-container {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .message-a {
+            text-align: left;
+        }
+        .message-b {
+            text-align: right;
+        }
+        .audio-player {
+            margin-top: 5px;
+        }
+        .card-header {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">LLM Conversation Demo</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header" data-toggle="collapse" data-target="#personaA">
+                        Persona A
+                    </div>
+                    <div id="personaA" class="collapse show">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="persona-a-language">Language:</label>
+                                <select id="persona-a-language" class="form-control">
+                                    <option value="ko-KR">Korean</option>
+                                    <option value="en-US">English (US)</option>
+                                    <option value="ja-JP">Japanese</option>
+                                    <option value="zh-CN">Chinese (Mandarin)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="persona-a-gender">Gender:</label>
+                                <select id="persona-a-gender" class="form-control">
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="persona-a-voice">Voice:</label>
+                                <select id="persona-a-voice" class="form-control"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="persona-a-tone">Tone:</label>
+                                <input type="text" id="persona-a-tone" class="form-control" value="Friendly">
+                            </div>
+                            <div class="form-group">
+                                <label for="persona-a-manner">Manner:</label>
+                                <input type="text" id="persona-a-manner" class="form-control" value="Polite">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header" data-toggle="collapse" data-target="#personaB">
+                        Persona B
+                    </div>
+                    <div id="personaB" class="collapse show">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="persona-b-language">Language:</label>
+                                <select id="persona-b-language" class="form-control">
+                                    <option value="ko-KR">Korean</option>
+                                    <option value="en-US">English (US)</option>
+                                    <option value="ja-JP">Japanese</option>
+                                    <option value="zh-CN">Chinese (Mandarin)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="persona-b-gender">Gender:</label>
+                                <select id="persona-b-gender" class="form-control">
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="persona-b-voice">Voice:</label>
+                                <select id="persona-b-voice" class="form-control"></select>
+                            </div>
+                            <div class="form-group">
+                                <label for="persona-b-tone">Tone:</label>
+                                <input type="text" id="persona-b-tone" class="form-control" value="Formal">
+                            </div>
+                            <div class="form-group">
+                                <label for="persona-b-manner">Manner:</label>
+                                <input type="text" id="persona-b-manner" class="form-control" value="Respectful">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="turns">Number of Turns:</label>
+            <input type="number" id="turns" class="form-control" value="3">
+        </div>
+        <div class="form-group">
+            <label for="topic">Conversation Topic:</label>
+            <input type="text" id="topic" class="form-control" value="낯선곳에서 길을 물어보는 상황">
+        </div>
+        <div class="form-group">
+            <label for="mood">Conversation Mood:</label>
+            <input type="text" id="mood" class="form-control" value="정중하게">
+        </div>
+
+        <button id="start-conversation" class="btn btn-primary">Start Conversation</button>
+
+        <div class="chat-container mt-4">
+            <div id="chat-log"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
