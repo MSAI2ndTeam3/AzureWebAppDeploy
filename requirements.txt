@@ -1,6 +1,13 @@
 Flask
 openai
 azure-cognitiveservices-speech
+azure-mgmt-storage
+azure-storage-blob
+azure-ai-projects 
+azure-identity
+azure-ai-inference
+azure-search-documents
+azure-ai-evaluation
 python-dotenv
 soundfile
 sounddevice

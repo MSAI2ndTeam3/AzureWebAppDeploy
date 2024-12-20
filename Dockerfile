@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM mcr.microsoft.com/azure-cognitive-services/speechservices/neural-text-to-speech:latest
 
 WORKDIR /app
 
