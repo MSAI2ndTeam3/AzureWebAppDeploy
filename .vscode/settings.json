@@ -31,5 +31,6 @@
         ".vscode{,/**}"
     ],
     "appService.defaultWebAppToDeploy": "/subscriptions/b850d62a-25fe-4d3a-9697-ea40449528a9/resourceGroups/5a048-rg-koreacentral/providers/Microsoft.Web/sites/5a048",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "FSharp.suggestGitignore": false
 }
