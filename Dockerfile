@@ -10,4 +10,4 @@ COPY . .
 EXPOSE 5000
 
 # Azure OpenAI and Speech API keys will be passed as environment variables
-CMD ["python", "app.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
