@@ -36,13 +36,9 @@ jobs:
         run: zip release.zip ./* -r
       
       - name: Azure Login
-        uses: azure/login@v2
+        uses: azure/login@v1
         with:         
-          allow-no-subscriptions: true          
-          auth-type: SERVICE_PRINCIPAL
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
