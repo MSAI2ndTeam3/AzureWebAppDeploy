@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, send_file
 from openai import AzureOpenAI
 import azure.cognitiveservices.speech as speechsdk
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 import time
 import io
@@ -11,8 +11,10 @@ import numpy as np
 import queue
 import threading
 import soundfile as sf
+
+# load_dotenv()
+
 app = Flask(__name__)
-load_dotenv()
 
 # Azure OpenAI 설정
 client = AzureOpenAI(
@@ -188,5 +190,5 @@ def get_voices():
 
     return jsonify({'voices': voices})
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000,debug=True)
